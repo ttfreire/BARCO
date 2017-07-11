@@ -1,0 +1,880 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="badOnRightSide" sid="293121110269651" static="0" type="number">0</variable>
+        <variable constant="0" name="badOnLeftSide" sid="523948392130346" static="0" type="number">3</variable>
+        <variable constant="0" name="goodOnRightSide" sid="678654114682283" static="0" type="number">0</variable>
+        <variable constant="0" name="goodOnLeftSide" sid="849791197783911" static="0" type="number">3</variable>
+        <variable comment="0-right, 1-travelling, 2-Right" constant="0" name="BoatState" sid="654453703959843" static="0" type="number">0</variable>
+        <variable comment="0 - Unfinished 1 - Won 2 - Lost" constant="0" name="Result" sid="160384602015868" static="0" type="number">0</variable>
+        <event-group description="" sid="947156456263500" title="Main Game">
+            <sub-events>
+                <event-block sid="353824366754227">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="762776790537847" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Clear" sid="890691508251870" type="LivresInicio" />
+                        <action behavior="Pin" id="0" name="Pin to object" sid="784517315769610" type="SeatB">
+                            <param id="0" name="Pin to">Boat</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="440111122423796" type="SeatA">
+                            <param id="0" name="Pin to">Boat</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Clear" sid="603219770276900" type="livresFIM" />
+                        <action id="2" name="Set at X" sid="112345468496112" type="livresFIM">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Value">22</param>
+                        </action>
+                        <action id="2" name="Set at X" sid="591508574625567" type="livresFIM">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Value">23</param>
+                        </action>
+                        <action id="2" name="Set at X" sid="155881447127501" type="livresFIM">
+                            <param id="0" name="X">2</param>
+                            <param id="1" name="Value">24</param>
+                        </action>
+                        <action id="2" name="Set at X" sid="821505467676659" type="livresFIM">
+                            <param id="0" name="X">3</param>
+                            <param id="1" name="Value">33</param>
+                        </action>
+                        <action id="2" name="Set at X" sid="583742067008793" type="livresFIM">
+                            <param id="0" name="X">4</param>
+                            <param id="1" name="Value">34</param>
+                        </action>
+                        <action id="2" name="Set at X" sid="971402773572487" type="livresFIM">
+                            <param id="0" name="X">5</param>
+                            <param id="1" name="Value">35</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="292325313798399" type="System">
+                            <param id="0" name="Variable">badOnLeftSide</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="842246911363985" type="System">
+                            <param id="0" name="Variable">goodOnLeftSide</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="190777614164268" type="System">
+                            <param id="0" name="Variable">badOnRightSide</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="134959562771219" type="System">
+                            <param id="0" name="Variable">goodOnRightSide</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="137724977081255" type="System">
+                            <param id="0" name="Variable">BoatState</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="893281224886984" type="System">
+                            <param id="0" name="Variable">Result</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="774183655625044">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="441032009266258" type="System">
+                                    <param id="0" name="Object">Characters</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="426997086646854">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="352900143039952" type="Characters">
+                                            <param id="0" name="Object">LandingPositionI</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="770264905315610" type="Characters">
+                                            <param id="0" name="Instance variable">occupiedLandingPosition</param>
+                                            <param id="1" name="Value">LandingPositionI.UID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="880276608705510">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="409969218456675" type="System">
+                                    <param id="0" name="Object">Good1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="850125862556138" type="Good1">
+                                    <param id="0" name="Instance variable">type</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="294115989135191">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="316116603412569" type="Characters">
+                            <param id="0" name="Object">JumpCollider</param>
+                        </condition>
+                        <condition behavior="Platform2" id="2" name="Is on floor" sid="827761970024309" type="Characters" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform2" id="7" name="Simulate control" sid="428435638153444" type="Characters">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="821257014087228">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="242305777615948" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">Characters</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="196356891275690" type="Characters">
+                            <param id="0" name="Instance variable">inOnBoat</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="345038448956314">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="752139843131539" type="SeatA">
+                                    <param id="0" name="Instance variable">free</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="PlatformMoveTo2" id="3" name="Move to object" sid="752895060208475" type="Characters">
+                                    <param id="0" name="Target">SeatA</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="759183211606728" type="SeatA">
+                                    <param id="0" name="Instance variable">free</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="882181195730670" type="Characters">
+                                    <param id="0" name="Instance variable">occupedSeat</param>
+                                    <param id="1" name="Value">&quot;A&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="103711019232421">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="227204982182573" type="Characters">
+                                            <param id="0" name="Instance variable">sideOfRiver</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Push" sid="112153177896673" type="LivresInicio">
+                                            <param id="0" name="Where">1</param>
+                                            <param id="1" name="Value">Characters.occupiedLandingPosition</param>
+                                            <param id="2" name="Axis">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="560329177467123">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="196602183614154" type="LandingPositionI">
+                                                    <param id="0" name="Unique ID">LivresInicio.At(0)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="756289721042833" type="LandingPositionI">
+                                                    <param id="0" name="Instance variable">free</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="503489536636774" type="Characters">
+                                                    <param id="0" name="Instance variable">occupiedLandingPosition</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="195615478343920">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="590409985769645" type="Characters">
+                                                    <param id="0" name="Instance variable">type</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-11" name="Subtract from" sid="216944139991706" type="System">
+                                                    <param id="0" name="Variable">badOnLeftSide</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="312284315938927">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="106657627175465" type="Characters">
+                                                    <param id="0" name="Instance variable">type</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-11" name="Subtract from" sid="734416136273475" type="System">
+                                                    <param id="0" name="Variable">goodOnLeftSide</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="364285023124699">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="862561399881108" type="Characters">
+                                            <param id="0" name="Instance variable">sideOfRiver</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Push" sid="623986882900494" type="livresFIM">
+                                            <param id="0" name="Where">1</param>
+                                            <param id="1" name="Value">Characters.occupiedLandingPosition</param>
+                                            <param id="2" name="Axis">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="338285707994113">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="838388035960087" type="LandingPositionF">
+                                                    <param id="0" name="Unique ID">livresFIM.At(0)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="122968854617583" type="LandingPositionF">
+                                                    <param id="0" name="Instance variable">free</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="885906101237405" type="Characters">
+                                                    <param id="0" name="Instance variable">occupiedLandingPosition</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="492843848755914">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="637792512530406" type="Characters">
+                                                    <param id="0" name="Instance variable">type</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-11" name="Subtract from" sid="447187356476686" type="System">
+                                                    <param id="0" name="Variable">badOnRightSide</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="275971992523542">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="466381914685931" type="Characters">
+                                                    <param id="0" name="Instance variable">type</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-11" name="Subtract from" sid="264743154880791" type="System">
+                                                    <param id="0" name="Variable">goodOnRightSide</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="563035027301218">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="260102828969065" type="System" />
+                                <condition id="-8" name="Is boolean instance variable set" sid="771165675685196" type="SeatB">
+                                    <param id="0" name="Instance variable">free</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="PlatformMoveTo2" id="3" name="Move to object" sid="759005736821552" type="Characters">
+                                    <param id="0" name="Target">SeatB</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="192205227013010" type="SeatB">
+                                    <param id="0" name="Instance variable">free</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="179491718443810" type="Characters">
+                                    <param id="0" name="Instance variable">occupedSeat</param>
+                                    <param id="1" name="Value">&quot;B&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="318613378576706">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="978090402857465" type="Characters">
+                                            <param id="0" name="Instance variable">sideOfRiver</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Push" sid="951417374185107" type="LivresInicio">
+                                            <param id="0" name="Where">1</param>
+                                            <param id="1" name="Value">Characters.occupiedLandingPosition</param>
+                                            <param id="2" name="Axis">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="156915427715143">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="376120540785166" type="LandingPositionI">
+                                                    <param id="0" name="Unique ID">LivresInicio.At(0)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="158701794565771" type="LandingPositionI">
+                                                    <param id="0" name="Instance variable">free</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="218468532824368" type="Characters">
+                                                    <param id="0" name="Instance variable">occupiedLandingPosition</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="729344494064187">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="141695577067184" type="Characters">
+                                                    <param id="0" name="Instance variable">type</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-11" name="Subtract from" sid="627832346055785" type="System">
+                                                    <param id="0" name="Variable">badOnLeftSide</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="617615463943667">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="815512525659730" type="Characters">
+                                                    <param id="0" name="Instance variable">type</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-11" name="Subtract from" sid="673988973326123" type="System">
+                                                    <param id="0" name="Variable">goodOnLeftSide</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="640775695525899">
+                                            <conditions />
+                                            <actions />
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="407858897707981">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="683577674687736" type="Characters">
+                                            <param id="0" name="Instance variable">sideOfRiver</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Push" sid="671222024703250" type="livresFIM">
+                                            <param id="0" name="Where">1</param>
+                                            <param id="1" name="Value">Characters.occupiedLandingPosition</param>
+                                            <param id="2" name="Axis">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="706148576376933">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="570391218027160" type="LandingPositionF">
+                                                    <param id="0" name="Unique ID">livresFIM.At(0)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="105923730860235" type="LandingPositionF">
+                                                    <param id="0" name="Instance variable">free</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="806316548347190" type="Characters">
+                                                    <param id="0" name="Instance variable">occupiedLandingPosition</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="518622274029748">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="373128269800026" type="Characters">
+                                                    <param id="0" name="Instance variable">type</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-11" name="Subtract from" sid="398991657697261" type="System">
+                                                    <param id="0" name="Variable">badOnRightSide</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="275043230605068">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="674004530216114" type="Characters">
+                                                    <param id="0" name="Instance variable">type</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-11" name="Subtract from" sid="426347549501748" type="System">
+                                                    <param id="0" name="Variable">goodOnRightSide</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="195774956440476">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="767982533002192" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">Characters</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="395446195670159" type="Characters">
+                            <param id="0" name="Instance variable">inOnBoat</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="145635263153221">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="375886579194368" type="System">
+                                    <param id="0" name="Variable">BoatState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="420580086895517">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="480668869343732" type="LandingPositionF">
+                                            <param id="0" name="Unique ID">livresFIM.At(0)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="PlatformMoveTo2" id="3" name="Move to object" sid="136099917325405" type="Characters">
+                                            <param id="0" name="Target">LandingPositionF</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="157005654452647" type="Characters">
+                                            <param id="0" name="Instance variable">inOnBoat</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="367793719561493" type="Characters">
+                                            <param id="0" name="Instance variable">occupiedLandingPosition</param>
+                                            <param id="1" name="Value">LandingPositionF.UID</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="817182365181122" type="LandingPositionF">
+                                            <param id="0" name="Instance variable">free</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="161532762562472" type="Characters">
+                                            <param id="0" name="Instance variable">sideOfRiver</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="9" name="Delete" sid="911912578846042" type="livresFIM">
+                                            <param id="0" name="Index">0</param>
+                                            <param id="1" name="Axis">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="929586118865552">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="278174348766092" type="Characters">
+                                                    <param id="0" name="Instance variable">type</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="318210564910738" type="System">
+                                                    <param id="0" name="Variable">badOnRightSide</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="114543387262070">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="319433975847059" type="Characters">
+                                                    <param id="0" name="Instance variable">type</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="594847188176480" type="System">
+                                                    <param id="0" name="Variable">goodOnRightSide</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="505903652610318">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="356227652403417" type="Characters">
+                                                    <param id="0" name="Instance variable">occupedSeat</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;A&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="230692718695025" type="Characters">
+                                                    <param id="0" name="Instance variable">occupedSeat</param>
+                                                    <param id="1" name="Value">&quot;&quot;</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="541996441947580" type="SeatA">
+                                                    <param id="0" name="Instance variable">free</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="749662209675225">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="401641731633315" type="Characters">
+                                                    <param id="0" name="Instance variable">occupedSeat</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;B&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="111597515789523" type="Characters">
+                                                    <param id="0" name="Instance variable">occupedSeat</param>
+                                                    <param id="1" name="Value">&quot;&quot;</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="600479933662423" type="SeatB">
+                                                    <param id="0" name="Instance variable">free</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="728086648860258">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="363901286634641" type="System">
+                                    <param id="0" name="Variable">BoatState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="975260657473584">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="773750156486900" type="LandingPositionI">
+                                            <param id="0" name="Unique ID">LivresInicio.At(0)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="PlatformMoveTo2" id="3" name="Move to object" sid="656740127307826" type="Characters">
+                                            <param id="0" name="Target">LandingPositionI</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="736729182015810" type="Characters">
+                                            <param id="0" name="Instance variable">inOnBoat</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="470455609415345" type="Characters">
+                                            <param id="0" name="Instance variable">occupiedLandingPosition</param>
+                                            <param id="1" name="Value">LandingPositionI.UID</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="357311368034097" type="LandingPositionI">
+                                            <param id="0" name="Instance variable">free</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="554662253399669" type="Characters">
+                                            <param id="0" name="Instance variable">sideOfRiver</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="9" name="Delete" sid="973821685648478" type="LivresInicio">
+                                            <param id="0" name="Index">0</param>
+                                            <param id="1" name="Axis">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="580015774371785">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="108082416985799" type="Characters">
+                                                    <param id="0" name="Instance variable">type</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="660835779459496" type="System">
+                                                    <param id="0" name="Variable">badOnLeftSide</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="247729312531290">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="192810449945808" type="Characters">
+                                                    <param id="0" name="Instance variable">type</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="332370069392515" type="System">
+                                                    <param id="0" name="Variable">goodOnLeftSide</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="781358426351388">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="107767937908847" type="Characters">
+                                                    <param id="0" name="Instance variable">occupedSeat</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;A&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="523005768889844" type="Characters">
+                                                    <param id="0" name="Instance variable">occupedSeat</param>
+                                                    <param id="1" name="Value">&quot;&quot;</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="496563970028600" type="SeatA">
+                                                    <param id="0" name="Instance variable">free</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="608167732799959">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="473009493782877" type="Characters">
+                                                    <param id="0" name="Instance variable">occupedSeat</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;B&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="261789694088550" type="Characters">
+                                                    <param id="0" name="Instance variable">occupedSeat</param>
+                                                    <param id="1" name="Value">&quot;&quot;</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="928894011988379" type="SeatB">
+                                                    <param id="0" name="Instance variable">free</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="875845521911939">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="394716876205353" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">Boat</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="896117042557637">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="202509679109193" type="SeatA">
+                                    <param id="0" name="Instance variable">free</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="617574984108659" type="SeatB">
+                                    <param id="0" name="Instance variable">free</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="779627098553057">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="604389275809991" type="System">
+                                            <param id="0" name="Variable">BoatState</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="MoveTo" id="6" name="Move to object" sid="546448591085757" type="Boat">
+                                            <param id="0" name="Target">StopF</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="406027072954233" type="System">
+                                            <param id="0" name="Variable">BoatState</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="752631693044966">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="857371258572943" type="System">
+                                            <param id="0" name="Variable">BoatState</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="MoveTo" id="6" name="Move to object" sid="552538446849594" type="Boat">
+                                            <param id="0" name="Target">StopI</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="566742997088442" type="System">
+                                            <param id="0" name="Variable">BoatState</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="977035334163637">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="452427161226425" type="Boat">
+                            <param id="0" name="Object">StopF</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="844563943399778" type="System">
+                            <param id="0" name="Variable">BoatState</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="232041806778069">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="177990563849565" type="Boat">
+                            <param id="0" name="Object">StopI</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="903581907058244" type="System">
+                            <param id="0" name="Variable">BoatState</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="667872295960765">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="289608117726832" type="Characters">
+                            <param id="0" name="Object">Boat</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="810155921016434" type="Characters">
+                            <param id="0" name="Instance variable">inOnBoat</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="926360929403781">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="864382342538847" type="System">
+                            <param id="0" name="First value">badOnLeftSide</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">goodOnLeftSide</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="864972592157658" type="System">
+                            <param id="0" name="Variable">goodOnLeftSide</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="427166056578707" type="System">
+                            <param id="0" name="Variable">Result</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="329823411726810">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="176555130835516" type="System">
+                            <param id="0" name="First value">badOnRightSide</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">goodOnRightSide</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="619627331880079" type="System">
+                            <param id="0" name="Variable">goodOnRightSide</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="836254155244232" type="System">
+                            <param id="0" name="Variable">Result</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="338357544697209">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="771942903285545" type="System">
+                            <param id="0" name="Variable">badOnRightSide</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="873535339242832" type="System">
+                            <param id="0" name="Variable">goodOnRightSide</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="509343180946452" type="System">
+                            <param id="0" name="Variable">Result</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="435237038762487">
+            <conditions>
+                <condition behavior="PlatformMoveTo2" id="0" name="On hit target position" sid="629799967796059" type="Characters" />
+            </conditions>
+            <actions>
+                <action behavior="MoveTo" id="0" name="Set enabled" sid="833639795111665" type="Boat">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="861515300168126">
+            <conditions>
+                <condition behavior="PlatformMoveTo2" id="3" name="Is moving" sid="699934427948256" type="Characters" />
+            </conditions>
+            <actions>
+                <action behavior="MoveTo" id="0" name="Set enabled" sid="405219426435001" type="Boat">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
