@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="0" name="numberOfCharactersSelected" sid="652295592300673" static="0" type="number">0</variable>
         <variable constant="0" name="badOnRightSide" sid="293121110269651" static="0" type="number">0</variable>
         <variable constant="0" name="badOnLeftSide" sid="523948392130346" static="0" type="number">3</variable>
         <variable constant="0" name="goodOnRightSide" sid="678654114682283" static="0" type="number">0</variable>
@@ -14,6 +15,7 @@
                 <condition id="-2" name="On start of layout" sid="762776790537847" type="System" />
             </conditions>
             <actions>
+                <action id="-21" name="Reset global variables" sid="277778114769166" type="System" />
                 <action id="0" name="Clear" sid="890691508251870" type="LivresInicio" />
                 <action behavior="Pin" id="0" name="Pin to object" sid="784517315769610" type="SeatB">
                     <param id="0" name="Pin to">Boat</param>
@@ -47,30 +49,6 @@
                 <action id="2" name="Set at X" sid="971402773572487" type="livresFIM">
                     <param id="0" name="X">5</param>
                     <param id="1" name="Value">35</param>
-                </action>
-                <action id="-9" name="Set value" sid="292325313798399" type="System">
-                    <param id="0" name="Variable">badOnLeftSide</param>
-                    <param id="1" name="Value">3</param>
-                </action>
-                <action id="-9" name="Set value" sid="842246911363985" type="System">
-                    <param id="0" name="Variable">goodOnLeftSide</param>
-                    <param id="1" name="Value">3</param>
-                </action>
-                <action id="-9" name="Set value" sid="190777614164268" type="System">
-                    <param id="0" name="Variable">badOnRightSide</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-                <action id="-9" name="Set value" sid="134959562771219" type="System">
-                    <param id="0" name="Variable">goodOnRightSide</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-                <action id="-9" name="Set value" sid="137724977081255" type="System">
-                    <param id="0" name="Variable">BoatState</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-                <action id="-9" name="Set value" sid="893281224886984" type="System">
-                    <param id="0" name="Variable">Result</param>
-                    <param id="1" name="Value">0</param>
                 </action>
             </actions>
             <sub-events>
@@ -141,10 +119,15 @@
                 <event-block sid="509782796812232">
                     <conditions>
                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="196356891275690" type="Characters">
-                            <param id="0" name="Instance variable">inOnBoat</param>
+                            <param id="0" name="Instance variable">isOnBoat</param>
                         </condition>
                         <condition id="-8" name="Is boolean instance variable set" sid="651663570199707" type="Characters">
                             <param id="0" name="Instance variable">canMove</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="397185462708833" type="System">
+                            <param id="0" name="Variable">numberOfCharactersSelected</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -182,6 +165,10 @@
                                             <param id="0" name="Where">1</param>
                                             <param id="1" name="Value">Characters.occupiedLandingPosition</param>
                                             <param id="2" name="Axis">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="495809871926138" type="Characters">
+                                            <param id="0" name="Instance variable">sideOfRiver</param>
+                                            <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
                                     <sub-events>
@@ -247,6 +234,10 @@
                                             <param id="0" name="Where">1</param>
                                             <param id="1" name="Value">Characters.occupiedLandingPosition</param>
                                             <param id="2" name="Axis">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="211992692672888" type="Characters">
+                                            <param id="0" name="Instance variable">sideOfRiver</param>
+                                            <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
                                     <sub-events>
@@ -336,6 +327,10 @@
                                             <param id="1" name="Value">Characters.occupiedLandingPosition</param>
                                             <param id="2" name="Axis">0</param>
                                         </action>
+                                        <action id="-10" name="Set value" sid="833952054524593" type="Characters">
+                                            <param id="0" name="Instance variable">sideOfRiver</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
                                     </actions>
                                     <sub-events>
                                         <event-block sid="156915427715143">
@@ -405,6 +400,10 @@
                                             <param id="1" name="Value">Characters.occupiedLandingPosition</param>
                                             <param id="2" name="Axis">0</param>
                                         </action>
+                                        <action id="-10" name="Set value" sid="867266814712312" type="Characters">
+                                            <param id="0" name="Instance variable">sideOfRiver</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
                                     </actions>
                                     <sub-events>
                                         <event-block sid="706148576376933">
@@ -460,12 +459,7 @@
                         </event-block>
                         <event-block sid="236990210154806">
                             <conditions />
-                            <actions>
-                                <action id="-10" name="Set value" sid="565635484529289" type="Characters">
-                                    <param id="0" name="Instance variable">sideOfRiver</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
+                            <actions />
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -487,18 +481,23 @@
                 <event-block sid="606984259719215">
                     <conditions>
                         <condition id="-8" name="Is boolean instance variable set" sid="395446195670159" type="Characters">
-                            <param id="0" name="Instance variable">inOnBoat</param>
+                            <param id="0" name="Instance variable">isOnBoat</param>
                         </condition>
                         <condition id="-8" name="Is boolean instance variable set" sid="681582457526333" type="Characters">
                             <param id="0" name="Instance variable">canMove</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="217587716097947" type="System">
+                            <param id="0" name="Variable">numberOfCharactersSelected</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
                         <event-block sid="145635263153221">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="375886579194368" type="System">
-                                    <param id="0" name="Variable">BoatState</param>
+                                <condition id="-7" name="Compare instance variable" sid="375886579194368" type="Boat">
+                                    <param id="0" name="Instance variable">sideOfRiver</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">2</param>
                                 </condition>
@@ -516,7 +515,7 @@
                                             <param id="0" name="Target">LandingPositionF</param>
                                         </action>
                                         <action id="-13" name="Set boolean" sid="157005654452647" type="Characters">
-                                            <param id="0" name="Instance variable">inOnBoat</param>
+                                            <param id="0" name="Instance variable">isOnBoat</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="367793719561493" type="Characters">
@@ -611,8 +610,8 @@
                         </event-block>
                         <event-block sid="728086648860258">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="363901286634641" type="System">
-                                    <param id="0" name="Variable">BoatState</param>
+                                <condition id="-7" name="Compare instance variable" sid="143105780658472" type="Boat">
+                                    <param id="0" name="Instance variable">sideOfRiver</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
@@ -630,7 +629,7 @@
                                             <param id="0" name="Target">LandingPositionI</param>
                                         </action>
                                         <action id="-13" name="Set boolean" sid="736729182015810" type="Characters">
-                                            <param id="0" name="Instance variable">inOnBoat</param>
+                                            <param id="0" name="Instance variable">isOnBoat</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="470455609415345" type="Characters">
@@ -753,8 +752,8 @@
                     <sub-events>
                         <event-block sid="779627098553057">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="604389275809991" type="System">
-                                    <param id="0" name="Variable">BoatState</param>
+                                <condition id="-7" name="Compare instance variable" sid="463304321562881" type="Boat">
+                                    <param id="0" name="Instance variable">sideOfRiver</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
@@ -762,10 +761,6 @@
                             <actions>
                                 <action behavior="MoveTo" id="6" name="Move to object" sid="546448591085757" type="Boat">
                                     <param id="0" name="Target">StopF</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="406027072954233" type="System">
-                                    <param id="0" name="Variable">BoatState</param>
-                                    <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="-13" name="Set boolean" sid="959167750586020" type="Characters">
                                     <param id="0" name="Instance variable">canMove</param>
@@ -775,8 +770,8 @@
                         </event-block>
                         <event-block sid="752631693044966">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="857371258572943" type="System">
-                                    <param id="0" name="Variable">BoatState</param>
+                                <condition id="-7" name="Compare instance variable" sid="920105138172659" type="Boat">
+                                    <param id="0" name="Instance variable">sideOfRiver</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">2</param>
                                 </condition>
@@ -784,10 +779,6 @@
                             <actions>
                                 <action behavior="MoveTo" id="6" name="Move to object" sid="552538446849594" type="Boat">
                                     <param id="0" name="Target">StopI</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="566742997088442" type="System">
-                                    <param id="0" name="Variable">BoatState</param>
-                                    <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="-13" name="Set boolean" sid="660242152661922" type="Characters">
                                     <param id="0" name="Instance variable">canMove</param>
@@ -806,8 +797,8 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Set value" sid="844563943399778" type="System">
-                    <param id="0" name="Variable">BoatState</param>
+                <action id="-10" name="Set value" sid="560183578354387" type="Boat">
+                    <param id="0" name="Instance variable">sideOfRiver</param>
                     <param id="1" name="Value">2</param>
                 </action>
             </actions>
@@ -819,8 +810,8 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Set value" sid="903581907058244" type="System">
-                    <param id="0" name="Variable">BoatState</param>
+                <action id="-10" name="Set value" sid="903581907058244" type="Boat">
+                    <param id="0" name="Instance variable">sideOfRiver</param>
                     <param id="1" name="Value">0</param>
                 </action>
             </actions>
@@ -833,7 +824,7 @@
             </conditions>
             <actions>
                 <action id="-13" name="Set boolean" sid="810155921016434" type="Characters">
-                    <param id="0" name="Instance variable">inOnBoat</param>
+                    <param id="0" name="Instance variable">isOnBoat</param>
                     <param id="1" name="Value">1</param>
                 </action>
             </actions>
@@ -906,6 +897,10 @@
                 <action behavior="MoveTo" id="0" name="Set enabled" sid="833639795111665" type="Boat">
                     <param id="0" name="State">1</param>
                 </action>
+                <action id="-9" name="Set value" sid="495868737966884" type="System">
+                    <param id="0" name="Variable">numberOfCharactersSelected</param>
+                    <param id="1" name="Value">0</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="861515300168126">
@@ -915,6 +910,10 @@
             <actions>
                 <action behavior="MoveTo" id="0" name="Set enabled" sid="405219426435001" type="Boat">
                     <param id="0" name="State">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="493703695105847" type="System">
+                    <param id="0" name="Variable">numberOfCharactersSelected</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
         </event-block>
@@ -926,10 +925,8 @@
             <sub-events>
                 <event-block sid="792616261734345">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="220360503761500" type="Characters">
-                            <param id="0" name="Instance variable">sideOfRiver</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
+                        <condition id="-8" name="Is boolean instance variable set" sid="220360503761500" type="Characters">
+                            <param id="0" name="Instance variable">isOnBoat</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -944,7 +941,7 @@
                         <condition id="-7" name="Compare instance variable" sid="813704547939373" type="Characters">
                             <param id="0" name="Instance variable">sideOfRiver</param>
                             <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">BoatState</param>
+                            <param id="2" name="Value">Boat.sideOfRiver</param>
                         </condition>
                     </conditions>
                     <actions>

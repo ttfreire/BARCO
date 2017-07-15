@@ -83,6 +83,9 @@
         </object-type>
         <object-type name="Boat" sid="576204256093684">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="sideOfRiver" sid="542339322097167" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Solid" sid="616559519485687">
                     <behavior id="solid" />
@@ -211,7 +214,7 @@
             </members>
             <instance-variables>
                 <instance-variable name="occupedSeat" sid="914431528105708" type="string" />
-                <instance-variable name="inOnBoat" sid="859491571847240" type="boolean" />
+                <instance-variable name="isOnBoat" sid="859491571847240" type="boolean" />
                 <instance-variable name="occupiedLandingPosition" sid="768544481360326" type="number" />
                 <instance-variable comment="0 - Left    1 - onRiver 2 - Right" name="sideOfRiver" sid="316766371559007" type="number" />
                 <instance-variable comment="0 - BAD, 1 - GOOD" name="type" sid="847344161440682" type="number" />

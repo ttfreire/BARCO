@@ -141,6 +141,9 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <sideOfRiver>0</sideOfRiver>
+                    </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Solid">
                             <properties>
@@ -182,7 +185,7 @@
                     </properties>
                     <instance-variables>
                         <occupedSeat></occupedSeat>
-                        <inOnBoat>false</inOnBoat>
+                        <isOnBoat>false</isOnBoat>
                         <occupiedLandingPosition>0</occupiedLandingPosition>
                         <sideOfRiver>0</sideOfRiver>
                         <type>0</type>
@@ -633,7 +636,7 @@
                     </properties>
                     <instance-variables>
                         <occupedSeat></occupedSeat>
-                        <inOnBoat>false</inOnBoat>
+                        <isOnBoat>false</isOnBoat>
                         <occupiedLandingPosition>0</occupiedLandingPosition>
                         <sideOfRiver>0</sideOfRiver>
                         <type>0</type>
@@ -684,7 +687,7 @@
                     </properties>
                     <instance-variables>
                         <occupedSeat></occupedSeat>
-                        <inOnBoat>false</inOnBoat>
+                        <isOnBoat>false</isOnBoat>
                         <occupiedLandingPosition>0</occupiedLandingPosition>
                         <sideOfRiver>0</sideOfRiver>
                         <type>0</type>
@@ -735,7 +738,7 @@
                     </properties>
                     <instance-variables>
                         <occupedSeat></occupedSeat>
-                        <inOnBoat>false</inOnBoat>
+                        <isOnBoat>false</isOnBoat>
                         <occupiedLandingPosition>0</occupiedLandingPosition>
                         <sideOfRiver>0</sideOfRiver>
                         <type>0</type>
@@ -786,7 +789,7 @@
                     </properties>
                     <instance-variables>
                         <occupedSeat></occupedSeat>
-                        <inOnBoat>false</inOnBoat>
+                        <isOnBoat>false</isOnBoat>
                         <occupiedLandingPosition>0</occupiedLandingPosition>
                         <sideOfRiver>0</sideOfRiver>
                         <type>0</type>
@@ -837,7 +840,7 @@
                     </properties>
                     <instance-variables>
                         <occupedSeat></occupedSeat>
-                        <inOnBoat>false</inOnBoat>
+                        <isOnBoat>false</isOnBoat>
                         <occupiedLandingPosition>0</occupiedLandingPosition>
                         <sideOfRiver>0</sideOfRiver>
                         <type>0</type>
@@ -872,34 +875,6 @@
                         <z>0</z>
                         <width>26.599000931</width>
                         <height>57.10900116</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="SeatB" uid="12">
-                    <properties>
-                        <initial-visibility>Invisible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <free>true</free>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="Pin" />
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>311.499755859</x>
-                        <y>357</y>
-                        <z>0</z>
-                        <width>18</width>
-                        <height>18</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
