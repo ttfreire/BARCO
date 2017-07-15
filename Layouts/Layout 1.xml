@@ -186,6 +186,7 @@
                         <occupiedLandingPosition>0</occupiedLandingPosition>
                         <sideOfRiver>0</sideOfRiver>
                         <type>0</type>
+                        <canMove>true</canMove>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform2">
@@ -636,6 +637,7 @@
                         <occupiedLandingPosition>0</occupiedLandingPosition>
                         <sideOfRiver>0</sideOfRiver>
                         <type>0</type>
+                        <canMove>true</canMove>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform2">
@@ -686,6 +688,7 @@
                         <occupiedLandingPosition>0</occupiedLandingPosition>
                         <sideOfRiver>0</sideOfRiver>
                         <type>0</type>
+                        <canMove>true</canMove>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform2">
@@ -736,6 +739,7 @@
                         <occupiedLandingPosition>0</occupiedLandingPosition>
                         <sideOfRiver>0</sideOfRiver>
                         <type>0</type>
+                        <canMove>true</canMove>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform2">
@@ -786,6 +790,7 @@
                         <occupiedLandingPosition>0</occupiedLandingPosition>
                         <sideOfRiver>0</sideOfRiver>
                         <type>0</type>
+                        <canMove>true</canMove>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform2">
@@ -836,6 +841,7 @@
                         <occupiedLandingPosition>0</occupiedLandingPosition>
                         <sideOfRiver>0</sideOfRiver>
                         <type>0</type>
+                        <canMove>true</canMove>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform2">

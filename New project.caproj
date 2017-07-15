@@ -14,6 +14,7 @@
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
@@ -27,8 +28,8 @@
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>854</width>
-        <height>480</height>
+        <width>848</width>
+        <height>477</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
@@ -198,6 +199,9 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Touch" sid="659833307578901">
+            <plugin id="Touch" />
+        </object-type>
     </object-folder>
     <families>
         <family name="Characters" plugin-id="Sprite" sid="195017915725424">
@@ -209,8 +213,9 @@
                 <instance-variable name="occupedSeat" sid="914431528105708" type="string" />
                 <instance-variable name="inOnBoat" sid="859491571847240" type="boolean" />
                 <instance-variable name="occupiedLandingPosition" sid="768544481360326" type="number" />
-                <instance-variable comment="0 - Left    1 - Right" name="sideOfRiver" sid="316766371559007" type="number" />
+                <instance-variable comment="0 - Left    1 - onRiver 2 - Right" name="sideOfRiver" sid="316766371559007" type="number" />
                 <instance-variable comment="0 - BAD, 1 - GOOD" name="type" sid="847344161440682" type="number" />
+                <instance-variable name="canMove" sid="837947621749183" type="boolean" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Platform2" sid="886426491656612">
@@ -231,6 +236,11 @@
     <global-instances>
         <global-instance type="Mouse" uid="0" />
         <global-instance type="Keyboard" uid="18" />
+        <global-instance type="Touch" uid="36">
+            <properties>
+                <use-mouse-input>No</use-mouse-input>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder />
     <music-folder />
